@@ -17,6 +17,6 @@ class LaramonsServiceProvider extends ServiceProvider
 
     public function register()
     {
-        // Register package services and bindings here
+        // Register package services and bindings here.
     }
 }
