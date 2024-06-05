@@ -22,7 +22,7 @@ class LaramonsServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->commands([
                 CreateUserCommand::class,
-            ]);
+            ]); 
         }
     }
 }
