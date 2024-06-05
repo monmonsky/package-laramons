@@ -10,8 +10,11 @@ class AuthController extends Controller
 {
     public function showLoginForm()
     {
+        // Log errors variable to make sure it is being passed to the view
+        \Log::info('Errors variable', ['errors' => session('errors')]);
         return view('laramons::login');
     }
+
 
     public function login(Request $request)
     {

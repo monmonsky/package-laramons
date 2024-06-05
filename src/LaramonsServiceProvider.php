@@ -3,6 +3,7 @@
 namespace Laramons\Laramons;
 
 use Illuminate\Support\ServiceProvider;
+use Laramons\Laramons\Commands\CreateUserCommand;
 
 class LaramonsServiceProvider extends ServiceProvider
 {
@@ -17,6 +18,11 @@ class LaramonsServiceProvider extends ServiceProvider
 
     public function register()
     {
-        // Register package services and bindings here.
+        // Register command
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                CreateUserCommand::class,
+            ]);
+        }
     }
 }
